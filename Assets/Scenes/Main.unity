@@ -251,7 +251,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -423,7 +423,6 @@ GameObject:
   - component: {fileID: 831797286}
   - component: {fileID: 831797288}
   - component: {fileID: 831797287}
-  - component: {fileID: 831797289}
   m_Layer: 5
   m_Name: Points
   m_TagString: Untagged
@@ -447,7 +446,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -211.3, y: 119}
+  m_AnchoredPosition: {x: -211, y: 120}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &831797287
@@ -547,18 +546,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 831797285}
   m_CullTransparentMesh: 1
---- !u!114 &831797289
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 831797285}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4625c752a517a4bdda3dc56790d13c34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &853826637
 GameObject:
   m_ObjectHideFlags: 0
@@ -639,7 +626,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!224 &853826641
 RectTransform:
