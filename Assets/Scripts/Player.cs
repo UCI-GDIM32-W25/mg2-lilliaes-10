@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class Player : MonoBehaviour
 {
     public float jumpForce = 0.3f;
@@ -34,5 +33,22 @@ public class Player : MonoBehaviour
         {
             isGrounded = false;
         }
+    }
+    [SerializeField] private TextMeshProGUI Pointstext;
+    private int score = 0;
+    private void Start()
+    {
+        UpdateScoreUI();
+    }
+
+    public void AddPoint()
+    {
+        score++;
+        UpdateScoreUI();
+    }
+
+    private void UpdateScoreUI()
+    {
+        PointstextText.text = "Points:" + score;
     }
 }

@@ -4,16 +4,26 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed;
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private float destroyX = -12f;
 
-    // Update is called once per frame
     void Update()
     {
-        transform.Translate(new Vector3(-1, 0, 0) * moveSpeed * Time.deltaTime);
-    } 
+        transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
+
+        if (transform.position.x < destroyX)
+        {
+            Destroy(gameObject);
+
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }
+
