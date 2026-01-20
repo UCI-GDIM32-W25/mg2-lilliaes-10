@@ -10,7 +10,7 @@ public class CoinSpawner : MonoBehaviour
     private void SpawnCoins()
     {
         Instantiate(Coin, transform.position, transform.rotation);
-        CoinSpawnTime = Random.Range(1f,3f);
+        CoinSpawnTime = Random.Range(.2f,.8f);
     }
 
     void Update()

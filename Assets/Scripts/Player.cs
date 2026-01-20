@@ -1,15 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 public class Player : MonoBehaviour
 {
     public float jumpForce = 0.3f;
     private Rigidbody2D rb;
     private bool isGrounded;
 
+    [SerializeField] private TextMeshProUGUI Pointstext;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        UpdateScoreUI();
     }
 
     void Update()
@@ -25,8 +29,20 @@ public class Player : MonoBehaviour
         {
             isGrounded = true;
         }
+        if (collision.gameObject.CompareTag("Coin"))
+        {
+            AddPoint();
+            Debug.Log("hi");
+        }
     }
-
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Coin"))
+        {
+            AddPoint();
+            Debug.Log("hi");
+        }
+    }
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
@@ -34,12 +50,8 @@ public class Player : MonoBehaviour
             isGrounded = false;
         }
     }
-    [SerializeField] private TextMeshProGUI Pointstext;
+    
     private int score = 0;
-    private void Start()
-    {
-        UpdateScoreUI();
-    }
 
     public void AddPoint()
     {
@@ -49,6 +61,6 @@ public class Player : MonoBehaviour
 
     private void UpdateScoreUI()
     {
-        PointstextText.text = "Points:" + score;
+        Pointstext.text = "Points: " + score;
     }
 }
